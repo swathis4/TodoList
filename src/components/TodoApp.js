@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { initialState, reducer } from "./TodoReducer";
+import { initialState, reducer } from './reducer/TodoReducer';
 import Todo from "./Todo";
 import AddTodo from "./AddTodo";
 import Header from './Header';

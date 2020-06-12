@@ -1,6 +1,6 @@
 import React, {useReducer} from 'react';
 import { shallow, mount } from 'enzyme';
-import { findByTestAttr } from './TestUtils';
+import { findByTestAttr, setHookState } from '../utils/TestUtils';
 import TodoApp from '../components/TodoApp';
 import AddTodo from '../components/AddTodo';
 

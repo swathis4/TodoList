@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { findByTestAttr, setHookState } from './TestUtils';
+import { findByTestAttr, setHookState } from '../utils/TestUtils';
 import AddToDo from '../components/AddTodo';
 
 
