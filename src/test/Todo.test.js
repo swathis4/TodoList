@@ -5,12 +5,6 @@ import Todo from '../components/Todo';
 
 const reactMock = require('react');
 
-let todos = jest.fn();
-reactMock.useState = setHookState({
-  todo: todos,
-  mode: "edit"
-});
-
 // const setState = jest.fn();
 // const useStateSpy = jest.spyOn(React, 'useState')
 // useStateSpy.mockImplementation((init) => [init, setState]);
@@ -20,26 +14,32 @@ const setup = () =>{
 }
 
 
-const remove = jest.fn();
-const edit = jest.fn();
+// const remove = jest.fn();
+// const edit = jest.fn();
 
-const props = {
-todo : {
-  id: 1,
-  text : "text"
-},
-remove,
-edit
-}
+// const props = {
+// todo : {
+//   id: 1,
+//   text : "text"
+// },
+// remove,
+// edit
+// }
 
 
 describe.skip('testing for Todo component', () =>{
 
 let wrapper;
-// const testState = {
-//   text: "text",
-//   mode: ""
-// };
+
+// let todos = jest.fn();
+ let todos = {
+  id: 1,
+  text : "text"
+}
+reactMock.useState = setHookState({
+  todo: todos,
+  mode: "edit"
+});
 
 beforeEach(() =>{
   wrapper = setup();
@@ -52,10 +52,10 @@ beforeEach(() =>{
   });
 
 
-  test("Should render BookDetails with data", () => {
-    const wrapper = mount(<Todo {...props} />);
-    expect(wrapper).not.toBeNull();
-  });
+  // test("Should render Todo with data", () => {
+  //   const wrapper = mount(<Todo {...props} />);
+  //   expect(wrapper).not.toBeNull();
+  // });
 
     test('rendering todo without error', () => {
         const component = findByTestAttr(wrapper , 'component-todo');
